@@ -15,7 +15,7 @@ class CoffeeShop:
             if inputValue == 1:
                 print("Drink Numbers: ")
                 for num, drink in self.drinks.items():
-                    print(str(num) + " -> " + str(drink) + " (" + str(self.prices[drink]) + ")")
+                    print(str(num) + " -> " + str(drink) + " (" + self.getPrice(drink) + ")")
                 self.order(int(input("Enter the number of the drink you would like to order: ")))
                 return
             elif inputValue == 2:
@@ -28,14 +28,14 @@ class CoffeeShop:
         while True:
             if orderNum in self.drinks:
                 name: str = input("Could I get a name for that?\n")
-                print("One " + self.drinks[orderNum] + " for " + name + " for a price of " + self.prices[
-                    self.drinks[orderNum]
-                ])
+                print("One " + self.drinks[orderNum] + " for " + name + " for a price of " + self.getPrice(self.drinks[orderNum]))
                 return
             else:
                 print("Invalid order")
                 self.manageOrder()
 
+    def getPrice(self, drinkName: str):
+        return self.prices[drinkName]
 
 def main():
     shop = CoffeeShop({

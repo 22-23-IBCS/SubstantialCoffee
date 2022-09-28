@@ -10,6 +10,7 @@ class CoffeeShop:
         print("1. Order")
         print("2. Learn more about the store!")
 
+        #Asking for option 1 or 2
         while True:
             inputValue: int = int(input())
             if inputValue == 1:
@@ -23,7 +24,7 @@ class CoffeeShop:
                 return
             else:
                 print("invalid input")
-
+    #Output for the order
     def order(self, orderNum: int):
         while True:
             if orderNum in self.drinks:

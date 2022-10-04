@@ -48,6 +48,11 @@ class Artist:
 def main():
     a = Artist()
     a.customB()
+    a.triangle()
+    a.square()
+    a.star()
+    a.circle()
+    a.customA()
 
 if __name__ == "__main__":
     main()

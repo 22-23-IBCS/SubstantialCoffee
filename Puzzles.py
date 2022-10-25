@@ -32,15 +32,25 @@ def isPrime(n :int):
 
     return True
 
-def isBetween(i:int, a:[]):
-    less = False
-    greater = True
-
-    for i in range(1):
-        pass 
 
 def q3(a:[]):
-    pass
+    output = []
+    adding = True
+    
+    for element in a:
+        
+        if element == 2 and adding == True:
+            adding = False
+            continue
+
+        if element == 3 and adding == False:
+            adding = True
+            continue
+        
+        if adding:
+            output.append(element)
+
+    return sum(output)
 
 
 def main():

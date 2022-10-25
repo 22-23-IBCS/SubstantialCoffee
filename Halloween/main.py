@@ -23,6 +23,7 @@ def find(houses: [], depth: int, dimension: ()):
 
     return bestPath
 
+
 def main():
     win = GraphWin("Visualization", 500, 500)
     dimension = (5, 5)
@@ -52,14 +53,15 @@ def main():
         for house in l:
             house.draw(win)
 
-    path = find(copy.deepcopy(houses), 5, dimension)
+    depth = input("How many houses: ")
+    path = find(copy.deepcopy(houses), int(depth) - 1, dimension)
     path.draw(win)
 
     s = 0
     for l in houses:
         for house in l:
             s += house.getGenerous()
-    s /= dimension[0]*dimension[1]
+    s /= dimension[0] * dimension[1]
 
     print("Total Average: " + str(s))
     print("Path Average: " + str(path.calcWeight()))

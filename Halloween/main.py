@@ -26,7 +26,7 @@ def find(houses: [], depth: int, dimension: ()):
 
 def main():
     win = GraphWin("Visualization", 500, 500)
-    dimension = (5, 5)
+    dimension = (7, 7)
 
     houses = []
     for i in range(dimension[0]):
